@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sistema Institucional de Becas de la Universidad Politécnica de Tlaxcala (UNIPOL TLAX). Conoce convocatorias, calcula tu elegibilidad, solicita apoyos y rastrea tu trámite en línea.">
+    <title>Sistema de Becas Institucionales | UNIPOL Tlaxcala</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Top Announcement Bar -->
+    <div class="top-bar" id="topAnnouncement">
+        <div class="container top-bar-content">
+            <span class="badge-live">CONVOCATORIA ABIERTA</span>
+            <p>Periodo Septiembre - Diciembre 2026: Registro de solicitudes disponible hasta el 15 de octubre.</p>
+            <a href="#solicitar" class="top-link">Solicitar Beca &rarr;</a>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header" id="mainHeader">
+        <div class="container nav-container">
+            <a href="#inicio" class="logo" id="logoLink">
+                <div class="logo-emblem">
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="10" fill="url(#brandGrad)" />
+                        <path d="M12 28V12L20 20L28 12V28" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="20" cy="11" r="2.5" fill="#f1c40f" />
+                        <defs>
+                            <linearGradient id="brandGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#7a1c31" />
+                                <stop offset="1" stop-color="#0d233a" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">UNIPOL <span class="logo-highlight">TLAX</span></span>
+                    <span class="logo-subtitle">Universidad Politécnica de Tlaxcala</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#inicio" class="nav-link active" id="link-inicio">Inicio</a>
+                <a href="#convocatorias" class="nav-link" id="link-convocatorias">Convocatorias</a>
+                <a href="#simulador" class="nav-link" id="link-simulador">Simulador</a>
+                <a href="#solicitar" class="nav-link" id="link-solicitar">Solicitar Beca</a>
+                <a href="#rastreo" class="nav-link" id="link-rastreo">Rastrear Folio</a>
+                <a href="#calendario" class="nav-link" id="link-calendario">Calendario & FAQ</a>
+                <a href="#panel-admin" class="nav-link nav-link-admin" id="link-admin">
+                    <span class="admin-dot"></span> Comité
+                </a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggleBtn" aria-label="Cambiar tema de color" title="Modo Oscuro / Claro">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a href="#solicitar" class="btn btn-primary btn-nav">Nueva Solicitud</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero-section">
+            <div class="hero-backdrop">
+                <div class="glow-orb orb-1"></div>
+                <div class="glow-orb orb-2"></div>
+                <div class="grid-overlay"></div>
+            </div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="sparkle">✦</span> Portal Oficial de Apoyos Estudiantiles
+                    </div>
+                    <h1 class="hero-title">
+                        Impulsamos tu Futuro Profesional en <span class="gradient-text">UNIPOL Tlaxcala</span>
+                    </h1>
+                    <p class="hero-description">
+                        Accede al Sistema Institucional de Becas y Apoyos Económicos de la Universidad Politécnica de Tlaxcala. 
+                        Diseñado para respaldar tu talento académico, liderazgo y desarrollo profesional sin barreras económicas.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="#convocatorias" class="btn btn-primary btn-lg">
+                            Explorar Convocatorias
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="#simulador" class="btn btn-secondary btn-lg">
+                            Calcular mi Elegibilidad
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <span class="stat-value" id="statMonto">$14.5M+</span>
+                            <span class="stat-label">Inversión Cuatrimestral</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value" id="statBecas">3,850+</span>
+                            <span class="stat-label">Alumnos Beneficiados</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value" id="statTasa">92%</span>
+                            <span class="stat-label">Tasa de Aprobación</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-card-preview">
+                    <div class="glass-card status-preview-card">
+                        <div class="preview-header">
+                            <div class="user-avatar-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            </div>
+                            <div>
+                                <span class="preview-tag">Solicitud Activa</span>
+                                <h4>Beca de Excelencia Académica</h4>
+                                <small>Folio: UPTX-BEC-2026-9481</small>
+                            </div>
+                        </div>
+                        <div class="preview-body">
+                            <div class="status-progress-mini">
+                                <div class="mini-step completed"><span>1</span><p>Registro</p></div>
+                                <div class="mini-step completed"><span>2</span><p>Documentos</p></div>
+                                <div class="mini-step active"><span>3</span><p>Comité</p></div>
+                                <div class="mini-step"><span>4</span><p>Dictamen</p></div>
+                            </div>
+                            <div class="preview-meta">
+                                <div><span>Promedio:</span> <strong>9.65</strong></div>
+                                <div><span>Carrera:</span> <strong>Ing. Mecatrónica</strong></div>
+                                <div><span>Estado:</span> <span class="badge-status in-progress">En Validación</span></div>
+                            </div>
+                        </div>
+                        <div class="preview-footer">
+                            <a href="#rastreo" class="btn btn-sm btn-outline-light w-100" id="quickTrackDemoBtn">Consultar estado detallado</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Convocatorias / Catálogo de Becas -->
+        <section id="convocatorias" class="section convocatorias-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">Opciones de Financiamiento</span>
+                    <h2 class="section-title">Catálogo de Becas y Apoyos UNIPOL</h2>
+                    <p class="section-description">
+                        Conoce las diferentes modalidades de apoyos institucionales y convenios externos disponibles para estudiantes inscritos en la UPTx.
+                    </p>
+                </div>
+
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-filter="all">Todas las Becas</button>
+                    <button class="filter-btn" data-filter="excelencia">Excelencia Académica</button>
+                    <button class="filter-btn" data-filter="manutencion">Manutención & Socioeconómica</button>
+                    <button class="filter-btn" data-filter="deporte">Deportiva y Cultural</button>
+                    <button class="filter-btn" data-filter="convenio">Santander & Telmex</button>
+                </div>
+
+                <div class="becas-grid" id="becasGrid">
+                    <!-- Cards will be populated dynamically by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Simulador de Elegibilidad -->
+        <section id="simulador" class="section simulador-section">
+            <div class="container">
+                <div class="simulador-wrapper glass-panel">
+                    <div class="simulador-info">
+                        <span class="section-subtitle light">Herramienta Inteligente</span>
+                        <h2>Calculadora de Elegibilidad</h2>
+                        <p>
+                            Ingresa tus datos académicos y socioeconómicos para determinar a qué becas aplicas 
+                            y estimar tu porcentaje de compatibilidad en tiempo real.
+                        </p>
+                        
+                        <div class="simulador-tips">
+                            <div class="tip-item">
+                                <span class="tip-icon">💡</span>
+                                <div>
+                                    <h5>Promedio acumulado</h5>
+                                    <p>Para becas de excelencia requieres mínimo 8.5 o 9.5 según la modalidad.</p>
+                                </div>
+                            </div>
+                            <div class="tip-item">
+                                <span class="tip-icon">📌</span>
+                                <div>
+                                    <h5>Sin materias reprobadas</h5>
+                                    <p>Debes estar en condición de alumno regular en el cuatrimestre en curso.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="simulador-form-box">
+                        <form id="simuladorForm">
+                            <div class="form-group">
+                                <label for="simCarrera">Programa Académico (Carrera)</label>
+                                <select id="simCarrera" class="form-control" required>
+                                    <option value="" disabled selected>Selecciona tu ingeniería o licenciatura</option>
+                                    <option value="ti">Ingeniería en Tecnologías de la Información e Innovación Digital</option>
+                                    <option value="mecatronica">Ingeniería Mecatrónica</option>
+                                    <option value="automotriz">Ingeniería en Sistemas Automotrices</option>
+                                    <option value="industrial">Ingeniería Industrial</option>
+                                    <option value="quimica">Ingeniería Química</option>
+                                    <option value="biotecnologia">Ingeniería en Biotecnología</option>
+                                    <option value="financiera">Ingeniería Financiera</option>
+                                </select>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="simPromedio">Promedio del Cuatrimestre anterior: <span id="promedioVal" class="val-badge">9.2</span></label>
+                                    <input type="range" id="simPromedio" min="7.0" max="10.0" step="0.1" value="9.2" class="range-slider">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="simCuatrimestre">Cuatrimestre en curso</label>
+                                    <select id="simCuatrimestre" class="form-control">
+                                        <option value="1">1er Cuatrimestre</option>
+                                        <option value="2">2do Cuatrimestre</option>
+                                        <option value="3">3er Cuatrimestre</option>
+                                        <option value="4" selected>4to Cuatrimestre</option>
+                                        <option value="5">5to Cuatrimestre</option>
+                                        <option value="6">6to Cuatrimestre</option>
+                                        <option value="7">7mo Cuatrimestre</option>
+                                        <option value="8">8vo Cuatrimestre</option>
+                                        <option value="9">9no Cuatrimestre</option>
+                                        <option value="10">10mo Cuatrimestre</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="simIngresos">Ingreso Familiar Mensual ($ MXN)</label>
+                                    <select id="simIngresos" class="form-control">
+                                        <option value="bajo">Menos de $6,000</option>
+                                        <option value="medio-bajo" selected>De $6,001 a $10,000</option>
+                                        <option value="medio">De $10,001 a $16,000</option>
+                                        <option value="alto">Más de $16,000</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="simActividades">Representación o Actividades Extra</label>
+                                    <select id="simActividades" class="form-control">
+                                        <option value="ninguna">Ninguna</option>
+                                        <option value="deporte">Deportes de Representación UPTx</option>
+                                        <option value="cultura">Taller Cultural / Artístico</option>
+                                        <option value="investigacion">Proyecto de Investigación / Semillero</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100" id="btnCalcularSimulador">
+                                Evaluar Compatibilidad de Becas
+                            </button>
+                        </form>
+
+                        <div class="simulador-results hidden" id="simuladorResultados">
+                            <div class="results-header">
+                                <div>
+                                    <h4>Resultado de tu Diagnóstico</h4>
+                                    <p id="resultTextSummary">Analizando criterios para UNIPOL Tlaxcala...</p>
+                                </div>
+                                <div class="score-circle">
+                                    <svg viewBox="0 0 36 36" class="circular-chart">
+                                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path id="circleScorePath" class="circle" stroke-dasharray="92, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <text x="18" y="20.35" class="percentage" id="scoreText">92%</text>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="recommended-list" id="recommendedBecasList">
+                                <!-- Dynamic recommendation tags -->
+                            </div>
+
+                            <a href="#solicitar" class="btn btn-success w-100 btn-apply-sim" id="btnAplicarSimulador">
+                                Iniciar Solicitud Directa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulario de Solicitud Multipaso -->
+        <section id="solicitar" class="section solicitar-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">Trámite Digital 100% en Línea</span>
+                    <h2 class="section-title">Registro de Solicitud de Beca</h2>
+                    <p class="section-description">Completa los datos requeridos y sube tus documentos oficiales digitalizados.</p>
+                </div>
+
+                <div class="wizard-container glass-card">
+                    <!-- Progress Stepper Header -->
+                    <div class="wizard-stepper">
+                        <div class="wizard-step active" data-step="1">
+                            <div class="step-num">1</div>
+                            <span class="step-title">Datos Personales</span>
+                        </div>
+                        <div class="wizard-step" data-step="2">
+                            <div class="step-num">2</div>
+                            <span class="step-title">Estudio Socioeconómico</span>
+                        </div>
+                        <div class="wizard-step" data-step="3">
+                            <div class="step-num">3</div>
+                            <span class="step-title">Carga de Documentos</span>
+                        </div>
+                        <div class="wizard-step" data-step="4">
+                            <div class="step-num">4</div>
+                            <span class="step-title">Confirmación & Acuse</span>
+                        </div>
+                    </div>
+
+                    <!-- Wizard Form Body -->
+                    <form id="becaForm" class="wizard-form">
+                        <!-- STEP 1 -->
+                        <div class="wizard-pane active" id="wizardStep1">
+                            <h3 class="pane-title">Paso 1: Información Académica del Alumno</h3>
+                            
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="solMatricula">Matrícula Estudiantil UNIPOL *</label>
+                                    <input type="text" id="solMatricula" class="form-control" placeholder="Ej. 202403152" required pattern="[0-9]{8,10}">
+                                    <small class="form-text">Tu matrícula oficial de la UPTx (8-10 dígitos).</small>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="solCurp">CURP *</label>
+                                    <input type="text" id="solCurp" class="form-control text-uppercase" placeholder="Ej. ABCD980101HTLXRM09" maxlength="18" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="solNombre">Nombre Completo *</label>
+                                    <input type="text" id="solNombre" class="form-control" placeholder="Nombre(s) y Apellidos" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="solEmail">Correo Electrónico Institucional *</label>
+                                    <input type="email" id="solEmail" class="form-control" placeholder="al.202403152@unipoltlax.edu.mx" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="solCarrera">Carrera *</label>
+                                    <select id="solCarrera" class="form-control" required>
+                                        <option value="" disabled selected>Seleccionar Carrera</option>
+                                        <option value="Ingeniería en Tecnologías de la Información">Ingeniería en Tecnologías de la Información</option>
+                                        <option value="Ingeniería Mecatrónica">Ingeniería Mecatrónica</option>
+                                        <option value="Ingeniería en Sistemas Automotrices">Ingeniería en Sistemas Automotrices</option>
+                                        <option value="Ingeniería Industrial">Ingeniería Industrial</option>
+                                        <option value="Ingeniería Química">Ingeniería Química</option>
+                                        <option value="Ingeniería en Biotecnología">Ingeniería en Biotecnología</option>
+                                        <option value="Ingeniería Financiera">Ingeniería Financiera</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="solCuatri">Cuatrimestre *</label>
+                                    <select id="solCuatri" class="form-control" required>
+                                        <option value="1">1º Cuatrimestre</option>
+                                        <option value="2">2º Cuatrimestre</option>
+                                        <option value="3">3º Cuatrimestre</option>
+                                        <option value="4" selected>4º Cuatrimestre</option>
+                                        <option value="5">5º Cuatrimestre</option>
+                                        <option value="6">6º Cuatrimestre</option>
+                                        <option value="7">7º Cuatrimestre</option>
+                                        <option value="8">8º Cuatrimestre</option>
+                                        <option value="9">9º Cuatrimestre</option>
+                                        <option value="10">10º Cuatrimestre</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="solPromedio">Promedio del Cuatrimestre Anterior *</label>
+                                    <input type="number" id="solPromedio" class="form-control" min="7.0" max="10.0" step="0.01" placeholder="Ej. 9.45" required>
+                                </div>
+                            </div>
+
+                            <div class="wizard-actions">
+                                <div></div>
+                                <button type="button" class="btn btn-primary btn-next" data-next="2">Siguiente: Estudio Socioeconómico &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 2 -->
+                        <div class="wizard-pane" id="wizardStep2">
+                            <h3 class="pane-title">Paso 2: Evaluación Socioeconómica del Hogar</h3>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="solBecaTipo">Beca a la que postula *</label>
+                                    <select id="solBecaTipo" class="form-control" required>
+                                        <option value="Beca de Excelencia Académica Institucional">Beca de Excelencia Académica Institucional (Exención 100%)</option>
+                                        <option value="Beca de Manutención y Aprovechamiento">Beca de Manutención y Aprovechamiento ($2,500/mes)</option>
+                                        <option value="Beca Socioeconómica y Alimenticia">Beca Socioeconómica y Alimenticia (Comedor + Apoyo)</option>
+                                        <option value="Beca Deportiva y Representación Cultural">Beca Deportiva y Representación Cultural (Exención 50%)</option>
+                                        <option value="Beca Santander UNIPOL de Movilidad">Beca Santander UNIPOL de Movilidad ($5,000 único)</option>
+                                        <option value="Beca Fundación Telmex - Telcel">Beca Fundación Telmex - Telcel ($3,000/mes)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="solMunicipio">Municipio de Residencia (Tlaxcala o Región) *</label>
+                                    <input type="text" id="solMunicipio" class="form-control" placeholder="Ej. Tepeyanco, Tlaxcala, Apizaco, etc." required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="solIngreso">Ingreso Total Familiar Mensual ($ MXN) *</label>
+                                    <input type="number" id="solIngreso" class="form-control" placeholder="Ej. 7500" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="solHabitantes">Personas en el hogar *</label>
+                                    <input type="number" id="solHabitantes" class="form-control" min="1" max="15" value="4" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="solVivienda">Tipo de Vivienda *</label>
+                                    <select id="solVivienda" class="form-control">
+                                        <option value="Propia">Propia</option>
+                                        <option value="Rentada">Rentada</option>
+                                        <option value="Prestada">Prestada / Familiar</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="solObservaciones">Observaciones o Condición de Especial Vulnerabilidad (Opcional)</label>
+                                <textarea id="solObservaciones" class="form-control" rows="3" placeholder="Si tienes alguna situación de salud, discapacidad, o sostén único familiar, descríbela aquí..."></textarea>
+                            </div>
+
+                            <div class="wizard-actions">
+                                <button type="button" class="btn btn-secondary btn-prev" data-prev="1">&larr; Anterior</button>
+                                <button type="button" class="btn btn-primary btn-next" data-next="3">Siguiente: Carga de Documentos &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 3 -->
+                        <div class="wizard-pane" id="wizardStep3">
+                            <h3 class="pane-title">Paso 3: Expediente Digital de Documentos</h3>
+                            <p class="pane-desc">Sube tus archivos escaneados o fotocapturados en formato PDF, PNG o JPG (Máx. 5MB por archivo).</p>
+
+                            <div class="upload-grid">
+                                <div class="upload-card">
+                                    <div class="upload-icon">📄</div>
+                                    <h5>Kárdex Oficial de Calificaciones</h5>
+                                    <p>Firmado por Servicios Escolares UPTx.</p>
+                                    <input type="file" id="fileKardex" accept=".pdf,.png,.jpg,.jpeg" class="file-input" required>
+                                    <label for="fileKardex" class="file-label" id="labelFileKardex">Seleccionar Archivo</label>
+                                    <span class="file-status-text" id="statusFileKardex">Requerido</span>
+                                </div>
+
+                                <div class="upload-card">
+                                    <div class="upload-icon">🆔</div>
+                                    <h5>Identificación Oficial / Credencial</h5>
+                                    <p>INE vigente o Credencial de Alumno UNIPOL.</p>
+                                    <input type="file" id="fileIne" accept=".pdf,.png,.jpg,.jpeg" class="file-input" required>
+                                    <label for="fileIne" class="file-label" id="labelFileIne">Seleccionar Archivo</label>
+                                    <span class="file-status-text" id="statusFileIne">Requerido</span>
+                                </div>
+
+                                <div class="upload-card">
+                                    <div class="upload-icon">🏠</div>
+                                    <h5>Comprobante de Domicilio</h5>
+                                    <p>Recibo de luz, agua o predial (< 3 meses).</p>
+                                    <input type="file" id="fileDomicilio" accept=".pdf,.png,.jpg,.jpeg" class="file-input" required>
+                                    <label for="fileDomicilio" class="file-label" id="labelFileDomicilio">Seleccionar Archivo</label>
+                                    <span class="file-status-text" id="statusFileDomicilio">Requerido</span>
+                                </div>
+
+                                <div class="upload-card">
+                                    <div class="upload-icon">💵</div>
+                                    <h5>Comprobante de Ingresos</h5>
+                                    <p>Recibo de nómina o Carta Bajo Protesta.</p>
+                                    <input type="file" id="fileIngresos" accept=".pdf,.png,.jpg,.jpeg" class="file-input" required>
+                                    <label for="fileIngresos" class="file-label" id="labelFileIngresos">Seleccionar Archivo</label>
+                                    <span class="file-status-text" id="statusFileIngresos">Requerido</span>
+                                </div>
+                            </div>
+
+                            <div class="form-check-group">
+                                <input type="checkbox" id="solProtesta" required>
+                                <label for="solProtesta">Declaro bajo protesta de decir verdad que toda la información ingresada y los documentos adjuntos son legítimos y verificables por la Dirección de Servicios Estudiantiles de la Universidad Politécnica de Tlaxcala.</label>
+                            </div>
+
+                            <div class="wizard-actions">
+                                <button type="button" class="btn btn-secondary btn-prev" data-prev="2">&larr; Anterior</button>
+                                <button type="submit" class="btn btn-success btn-submit-form" id="btnFinalizarSolicitud">
+                                    Finalizar y Generar Folio Oficial
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 4 -->
+                        <div class="wizard-pane" id="wizardStep4">
+                            <div class="success-screen text-center">
+                                <div class="success-icon-animated">
+                                    <svg viewBox="0 0 52 52" class="checkmark">
+                                        <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                                        <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                                    </svg>
+                                </div>
+
+                                <h2 class="text-success">¡Solicitud Registrada Exitosamente!</h2>
+                                <p>Tu trámite ha ingresado correctamente a la plataforma institucional del Comité de Becas UNIPOL Tlaxcala.</p>
+
+                                <div class="folio-highlight-box">
+                                    <span class="folio-label">FOLIO ÚNICO DE TRÁMITE</span>
+                                    <h1 class="folio-code" id="generatedFolioCode">UPTX-BEC-2026-0000</h1>
+                                    <p class="folio-note">Guarda este folio para consultar el avance de tu dictamen en cualquier momento.</p>
+                                </div>
+
+                                <div class="summary-details-card">
+                                    <div class="summary-row"><span>Solicitante:</span> <strong id="summaryNombre">-</strong></div>
+                                    <div class="summary-row"><span>Matrícula:</span> <strong id="summaryMatricula">-</strong></div>
+                                    <div class="summary-row"><span>Beca Solicitada:</span> <strong id="summaryBeca">-</strong></div>
+                                    <div class="summary-row"><span>Fecha de Registro:</span> <strong id="summaryFecha">-</strong></div>
+                                </div>
+
+                                <div class="action-buttons-group">
+                                    <button type="button" class="btn btn-primary" id="btnImprimirAcuse">
+                                        🖨️ Descargar / Imprimir Acuse PDF
+                                    </button>
+                                    <button type="button" class="btn btn-outline" id="btnIrARastreo">
+                                        🔍 Ir al Rastreador de Folio
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rastreador de Estatus -->
+        <section id="rastreo" class="section rastreo-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">Consulta de Avance</span>
+                    <h2 class="section-title">Seguimiento en Vivo de Folio</h2>
+                    <p class="section-description">Ingresa tu Folio Único o Matrícula para conocer el estado actual de tu solicitud.</p>
+                </div>
+
+                <div class="search-folio-box glass-card">
+                    <form id="trackForm" class="track-form-inline">
+                        <div class="search-input-wrapper">
+                            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                            <input type="text" id="trackInput" class="form-control form-control-lg" placeholder="Ingresa Folio (ej. UPTX-BEC-2026-9481) o tu Matrícula (202403152)" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg" id="btnTrackFolio">
+                            Consultar Estatus
+                        </button>
+                    </form>
+
+                    <div class="quick-samples text-center">
+                        <small>¿Quieres probar folios de prueba existentes?</small>
+                        <div class="sample-badges">
+                            <button type="button" class="badge-sample-btn" data-folio="UPTX-BEC-2026-9481">UPTX-BEC-2026-9481 (Aprobada)</button>
+                            <button type="button" class="badge-sample-btn" data-folio="UPTX-BEC-2026-7734">UPTX-BEC-2026-7734 (En Validación)</button>
+                            <button type="button" class="badge-sample-btn" data-folio="UPTX-BEC-2026-5120">UPTX-BEC-2026-5120 (Revision Comité)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Status Result Card -->
+                <div class="track-result-container hidden" id="trackResultContainer">
+                    <div class="glass-card status-detail-card">
+                        <div class="status-card-header">
+                            <div class="applicant-info">
+                                <div class="applicant-avatar" id="trackAvatar">UP</div>
+                                <div>
+                                    <h3 id="trackNombre">Alondra Ramos Morales</h3>
+                                    <p><span id="trackMatricula">202403152</span> | <span id="trackCarrera">Ingeniería Mecatrónica</span></p>
+                                </div>
+                            </div>
+                            <div class="status-badge-container">
+                                <span class="badge-status-large" id="trackBadgeStatus">EN VALIDACIÓN</span>
+                                <small class="text-muted block mt-1">Folio: <strong id="trackFolioDisplay">UPTX-BEC-2026-9481</strong></small>
+                            </div>
+                        </div>
+
+                        <!-- Stepper progress bar -->
+                        <div class="tracker-timeline" id="trackerTimeline">
+                            <div class="timeline-step step-done" id="stepNode1">
+                                <div class="step-icon">✓</div>
+                                <h6>1. Solicitud Recibida</h6>
+                                <small id="stepDate1">12 Sep 2026</small>
+                            </div>
+                            <div class="timeline-step step-done" id="stepNode2">
+                                <div class="step-icon">✓</div>
+                                <h6>2. Documentos Digitales</h6>
+                                <small id="stepDate2">13 Sep 2026</small>
+                            </div>
+                            <div class="timeline-step step-active" id="stepNode3">
+                                <div class="step-icon">⌛</div>
+                                <h6>3. Validación Socioeconómica</h6>
+                                <small id="stepDate3">En Revisión</small>
+                            </div>
+                            <div class="timeline-step" id="stepNode4">
+                                <div class="step-icon">🏛️</div>
+                                <h6>4. Sesión del Comité</h6>
+                                <small id="stepDate4">Pendiente</small>
+                            </div>
+                            <div class="timeline-step" id="stepNode5">
+                                <div class="step-icon">🎉</div>
+                                <h6>5. Dictamen & Depósito</h6>
+                                <small id="stepDate5">Pendiente</small>
+                            </div>
+                        </div>
+
+                        <div class="status-observations-box">
+                            <h5>📌 Dictamen u Observaciones Institucionales:</h5>
+                            <p id="trackObservaciones">
+                                Tu expediente ha superado la revisión inicial de Servicios Escolares. Se encuentra programado para la 2ª Sesión Ordinaria del Comité de Becas UNIPOL Tlaxcala.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendario & FAQ -->
+        <section id="calendario" class="section faq-section">
+            <div class="container">
+                <div class="grid-2col">
+                    <!-- Calendario -->
+                    <div class="calendar-box glass-card">
+                        <span class="section-subtitle">Cronograma Oficial</span>
+                        <h3>Fechas Clave Cuatrimestre 2026</h3>
+                        <ul class="timeline-list">
+                            <li>
+                                <div class="time-badge">01 SEP - 15 OCT</div>
+                                <div class="time-content">
+                                    <h4>Apertura de Plataforma y Registro</h4>
+                                    <p>Subida de expedientes y captura de solicitudes de becas institucionales.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="time-badge">16 OCT - 25 OCT</div>
+                                <div class="time-content">
+                                    <h4>Evaluación del Comité de Becas</h4>
+                                    <p>Cálculo de vulnerabilidad socioeconómica y validación de promedios.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="time-badge">01 NOV 2026</div>
+                                <div class="time-content">
+                                    <h4>Publicación de Padron de Beneficiarios</h4>
+                                    <p>Publicación de la lista de folios aprobados en el portal oficial.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="time-badge">10 NOV 2026</div>
+                                <div class="time-content">
+                                    <h4>Dispersión de Apoyos y Exenciones</h4>
+                                    <p>Aplicación de descuentos en caja y depósitos a cuentas registradas.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- FAQ accordion -->
+                    <div class="faq-box glass-card">
+                        <span class="section-subtitle">Preguntas Frecuentes</span>
+                        <h3>Resuelve tus dudas sobre las Becas</h3>
+                        
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    <span>¿Quiénes pueden postular a las Becas UNIPOL Tlaxcala?</span>
+                                    <span class="acc-icon">+</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>Todos los alumnos regulares inscritos en cualquiera de las 7 carreras de ingeniería de la Universidad Politécnica de Tlaxcala a partir del segundo cuatrimestre (o desde el primero en caso de becas especiales de ingreso por excelencia).</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    <span>¿Puedo contar con dos becas al mismo tiempo?</span>
+                                    <span class="acc-icon">+</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>Por norma de equidad institucional, no se pueden duplicar dos becas económicas con presupuesto de la UPTx. Sin embargo, una beca de exención de colegiatura sí es compatible con programas federales como "Jóvenes Escribiendo el Futuro" o Santander.</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    <span>¿Qué promedio mínimo necesito para renovar la beca?</span>
+                                    <span class="acc-icon">+</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>Para Beca de Excelencia se exige mantener promedio de 9.5 o superior sin materias extraordinarias. Para Beca Socioeconómica y Alimenticia el promedio mínimo es de 8.5.</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    <span>¿Cómo descargar los formatos oficiales para firma?</span>
+                                    <span class="acc-icon">+</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>Puedes obtener la Carta Bajo Protesta de decir Verdad y el Formato de Solicitud de Estudio Socioeconómico haciendo clic en el enlace de la sección de descargas del portal.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Panel del Comité Administrativo (Admin View Dashboard) -->
+        <section id="panel-admin" class="section admin-section">
+            <div class="container">
+                <div class="admin-header-box glass-card">
+                    <div class="admin-header-title">
+                        <div class="admin-shield-icon">🏛️</div>
+                        <div>
+                            <span class="badge-admin">VISTA DE GESTIÓN Y REVISIÓN</span>
+                            <h2>Panel de Control del Comité de Becas UNIPOL</h2>
+                            <p>Administración de solicitudes, dictamen de expedientes y métricas presupuestales.</p>
+                        </div>
+                    </div>
+                    <div class="admin-quick-actions">
+                        <button class="btn btn-sm btn-outline" id="btnSeedDemoData">
+                            ➕ Cargar Solicitudes de Prueba
+                        </button>
+                        <button class="btn btn-sm btn-primary" id="btnExportCSV">
+                            📊 Exportar Padrón (CSV)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Admin Metrics Grid -->
+                <div class="admin-metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-title">Solicitudes Totales</span>
+                        <h3 id="adminTotalCount">12</h3>
+                        <span class="metric-trend text-primary">Cuatrimestre 2026-3</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-title">En Validación</span>
+                        <h3 id="adminPendingCount" class="text-warning">4</h3>
+                        <span class="metric-trend text-warning">Requieren dictamen</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-title">Aprobadas</span>
+                        <h3 id="adminApprovedCount" class="text-success">7</h3>
+                        <span class="metric-trend text-success">Presupuesto asignado</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-title">Presupuesto Comprometido</span>
+                        <h3 id="adminBudgetDisplay" class="text-info">$185,500 MXN</h3>
+                        <span class="metric-trend">Fondo Institucional</span>
+                    </div>
+                </div>
+
+                <!-- Table Filter & Search -->
+                <div class="admin-table-container glass-card">
+                    <div class="table-toolbar">
+                        <div class="search-box-sm">
+                            <input type="text" id="adminSearchInput" class="form-control" placeholder="Buscar por Nombre, Matrícula o Folio...">
+                        </div>
+                        <div class="filter-group-sm">
+                            <select id="adminFilterStatus" class="form-control">
+                                <option value="all">Todos los Estados</option>
+                                <option value="EN VALIDACIÓN">En Validación</option>
+                                <option value="REVISIÓN COMITÉ">Revisión Comité</option>
+                                <option value="APROBADA">Aprobada</option>
+                                <option value="RECHAZADA">Rechazada</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table admin-table" id="adminTable">
+                            <thead>
+                                <tr>
+                                    <th>Folio</th>
+                                    <th>Alumno</th>
+                                    <th>Carrera / Cuatrimestre</th>
+                                    <th>Promedio</th>
+                                    <th>Modalidad Beca</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminTableBody">
+                                <!-- Dynamic rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para Detalle / Modalidades / Dictamen Admin -->
+    <div class="modal-backdrop hidden" id="modalBackdrop">
+        <div class="modal-box glass-card" id="modalBox">
+            <button class="modal-close" id="modalCloseBtn">&times;</button>
+            <div id="modalContent">
+                <!-- Content injected dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo-title">UNIPOL TLAXCALA</div>
+                <p>Universidad Politécnica de Tlaxcala - Av. Universidad Politécnica No. 1, San Pedro Xalcaltzinco, Tepeyanco, Tlaxcala. C.P. 90180.</p>
+                <p>&copy; 2026 Universidad Politécnica de Tlaxcala. Todos los derechos reservados.</p>
+            </div>
+            <div class="footer-links">
+                <h5>Enlaces Rápidos</h5>
+                <ul>
+                    <li><a href="https://unipoltlax.edu.mx" target="_blank">Sitio Oficial UNIPOL Tlaxcala</a></li>
+                    <li><a href="#convocatorias">Becas Institucionales</a></li>
+                    <li><a href="#solicitar">Formulario de Registro</a></li>
+                    <li><a href="#rastreo">Atención y Folios</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Atención a Becas</h5>
+                <p>📧 becas@unipoltlax.edu.mx</p>
+                <p>📞 (246) 465 1300 Ext. 104 / 108</p>
+                <p>⏰ Lunes a Viernes: 8:00 AM - 4:00 PM</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript Logic -->
+    <script src="main.js"></script>
+</body>
+
+</html>
